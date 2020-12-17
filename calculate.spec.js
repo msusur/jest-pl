@@ -19,4 +19,22 @@ describe("Calculations", () => {
       expect(result).toBe(5);
     });
   });
+  describe("div2",() => {
+    it("should divide numbers", () => {
+      // Act
+      const result = calculations.div(0, 10);
+
+      // Assert
+      expect(result).toBe(0);
+    });
+  });
+  describe("div3",() => {
+    it("should divide numbers", () => {
+      // Act
+      const result = calculations.div(10, 0);
+
+      // Assert
+      expect(result).toBe(Infinity);
+    });
+  });
 });

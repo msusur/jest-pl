@@ -60,7 +60,7 @@ describe("div", ()=>{
       const result = div(NaN, 0);
 
       // Assert
-      expect(result).toThrow(new Error("Invalid"));
+      expect(result).toThrow("Invalid");
     });
   
  
@@ -69,7 +69,7 @@ describe("div", ()=>{
       const result = div(null, 0);
 
       // Assert
-      expect(result).toThrow(new Error("Invalid"));
+      expect(result).toThrow("Invalid");
     });
 
 
@@ -87,7 +87,7 @@ describe("div", ()=>{
       const result = div(0, 0);
 
       // Assert
-      expect(result).toThrow(new Error("Invalid"));
+      expect(result).toThrow("Invalid");
     });
 
     // test("it should throw error when dividing a non-number", () => {
@@ -100,7 +100,7 @@ describe("div", ()=>{
       const result = div(15, NaN);
 
       // Assert
-      expect(result).toThrow(new Error("Invalid"));
+      expect(result).toThrow("Invalid");
     });
 
   });

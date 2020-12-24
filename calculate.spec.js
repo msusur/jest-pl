@@ -1,7 +1,6 @@
 
 const {div, add,calculate} = require("./calculate");
 
-describe("Calculations", () => {
   describe("calculate", () => {
     it("should multiply inputs", () => {
       // Act
@@ -12,75 +11,96 @@ describe("Calculations", () => {
     });
   });
   describe("add", () => {
-    it("should divide numbers", () => {
+    it("should add numbers", () => {
       // Act
       const result = add(10, 2);
 
       // Assert
       expect(result).toBe(12);
     });
+    
+    it("should add numbers", () => {
+      // Act
+      const result = add(11, 2);
+
+      // Assert
+      expect(result).toBe(13);
+    });
+
   });
-  describe("div", () => {
-    it("should divide numbers", () => {
+describe("div", ()=>{
+     it("should divide numbers", () => {
       // Act
       const result = div(10, 2);
 
       // Assert
       expect(result).toBe(5);
     });
-  });
-  describe("div2",() => {
-    it("should divide numbers", () => {
+
+      it("should divide numbers", () => {
       // Act
       const result = div(0, 10);
 
       // Assert
       expect(result).toBe(0);
     });
-  });
-  describe("div3",() => {
-    it("should divide numbers", () => {
+
+ 
+    it("it should be infinity when number divide by 0 ", () => {
       // Act
       const result = div(10, 0);
 
       // Assert
       expect(result).toBe(Infinity);
     });
-  });
-  describe("div4",() => {
-    it("should divide numbers", () => {
+ 
+
+    it("it should throw error when a non-number dividing 0", () => {
       // Act
       const result = div(NaN, 0);
 
       // Assert
-      expect(result).toBe("Invalid");
+      expect(result).toThrow(new Error("Invalid"));
     });
-  });
-  describe("div5",() => {
-    it("should divide numbers", () => {
+  
+ 
+    it("it should throw error when non number dividing 0", () => {
       // Act
       const result = div(null, 0);
 
       // Assert
-      expect(result).toBe("Invalid");
+      expect(result).toThrow(new Error("Invalid"));
     });
-  });
-  describe("div6",() => {
-    it("should divide numbers", () => {
+
+
+    it("it should throw error when non number dividing 0", () => {
       // Act
       const result = div(undefined, 0);
 
       // Assert
       expect(result).toBe("Invalid");
     });
-  });
-  describe("div7",() => {
-    it("should divide numbers", () => {
+
+ 
+    it("it should throw error", () => {
       // Act
       const result = div(0, 0);
 
       // Assert
-      expect(result).toBe("Invalid");
+      expect(result).toThrow(new Error("Invalid"));
     });
+
+    // test("it should throw error when dividing a non-number", () => {
+    
+    //   expect(div(15, NaN)).toThrow(new Error("Invalid"));
+    // });
+
+    it("it should throw error when dividing a non number", () => {
+      // Act
+      const result = div(15, NaN);
+
+      // Assert
+      expect(result).toThrow(new Error("Invalid"));
+    });
+
   });
-});

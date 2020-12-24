@@ -3,9 +3,9 @@ const calculate = (a, b) => a * b;
 const add = (a, b) => a + b;
 
 const div = (a,b) => {
-       var quotient = a / b;
+       let quotient = a / b;
         if (quotient !== quotient) {  
-            return "Invalid"
+          throw new Error("Invalid");
         }
         return quotient;
       

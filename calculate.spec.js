@@ -28,7 +28,7 @@ const {div, add,calculate} = require("./calculate");
     });
 
   });
-describe("div", ()=>{
+  describe("div", ()=>{
      it("should divide numbers", () => {
       // Act
       const result = div(10, 2);
@@ -51,56 +51,47 @@ describe("div", ()=>{
       const result = div(10, 0);
 
       // Assert
-      expect(result).toBe(Infinity);
+       expect(result).toBe(Infinity);
     });
  
 
     it("it should throw error when a non-number dividing 0", () => {
-      // Act
-      const result = div(NaN, 0);
-
-      // Assert
-      expect(result).toThrow("Invalid");
+      
+      expect(()=>div(NaN, 0)).toThrow();
     });
   
  
     it("it should throw error when non number dividing 0", () => {
-      // Act
-      const result = div(null, 0);
 
-      // Assert
-      expect(result).toThrow("Invalid");
+      expect(()=>div(null, 0)).toThrow();
     });
 
 
     it("it should throw error when non number dividing 0", () => {
-      // Act
-      const result = div(undefined, 0);
 
-      // Assert
-      expect(result).toBe("Invalid");
+      expect(()=>div(undefined, 0)).toThrow();
     });
 
  
     it("it should throw error", () => {
-      // Act
-      const result = div(0, 0);
-
-      // Assert
-      expect(result).toThrow("Invalid");
+   
+      expect(()=>div(0, 0)).toThrow();
     });
 
-    // test("it should throw error when dividing a non-number", () => {
+    test("it should throw error when dividing a non-number", () => {
     
-    //   expect(div(15, NaN)).toThrow(new Error("Invalid"));
-    // });
+      expect(()=>div(15, NaN)).toThrow();
+    });
 
     it("it should throw error when dividing a non number", () => {
-      // Act
-      const result = div(15, NaN);
-
-      // Assert
-      expect(result).toThrow("Invalid");
+    expect(()=>div(15, NaN)).toThrow();
     });
+    
 
+    it("it should throw error when dividing a non number", () => {
+      expect(() => div(15, NaN)).toThrow();
+    });
   });
+  
+  
+
